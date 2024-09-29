@@ -1,0 +1,12 @@
+root = /var/www/laravel-roles
+root = /var/www/local-pc/laravel-workspace/laravel-roles
+
+auto = true
+batch = true
+confirmbigdel = false
+# path = ten-thu-muc / ten - file -> chi dinh thu muc hoac tap tin can dong bo
+ignore = Path node_modules
+ignore = Path vendor
+ignore = Path tests
+ignore = Name default.prf
+ignore = Name *.tmp
