@@ -290,7 +290,7 @@ return [
     |
     | For detailed instructions you can look here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Menu-Configuration
-    |
+    | https://fontawesome.com/v5/search
     */
 
     'menu' => [
@@ -308,7 +308,19 @@ return [
             'type' => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
+        [
+            'text' => 'Profile',
+            'url' => 'admin/profile',
+            'icon' => 'fas fa-fw fa-user',
+            'topnav_user' => true,
+        ],
+        [
+            'text' => 'Settings',
+            'url' => 'admin/settings',
+            'icon' => 'fas fa-fw fa-cog',
+            'topnav_user' => true,
+            'icon_color' => 'primary',
+        ],
         [
             'type' => 'navbar-notification',
             'id' => 'my-notification',
@@ -343,6 +355,25 @@ return [
             'icon' => 'far fa-fw fa-file',
             'label' => 4,
             'label_color' => 'success',
+        ],
+        ['header' => 'QUẢN TRỊ TRẮC NGHIỆM'],    
+        [
+            'text' => 'Quản trị câu hỏi',
+            'url' => 'admin/quiz-list',
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'user-list',
+        ],
+        [
+            'text' => 'Quản trị bộ đề',
+            'url' => 'admin/topic-set-list', 
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'user-list',
+        ],
+        [
+            'text' => 'Quản trị chuyên mục',
+            'url' => 'admin/category/quiz',
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'user-list',
         ],
         ['header' => 'account_settings'],
         [
@@ -407,9 +438,9 @@ return [
             'url' => 'admin/component',
         ],
         [
-            'text' => 'warning',
+            'text' => 'datatables',
             'icon_color' => 'yellow',
-            'url' => '#',
+            'url' => 'admin/datatables',
         ],
         [
             'text' => 'information',
@@ -470,6 +501,51 @@ return [
                     'type' => 'css',
                     'asset' => false,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                ],
+            ],
+        ],
+        'DatatablesPlugins' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/dataTables.buttons.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.bootstrap4.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.html5.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/js/buttons.print.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/jszip/jszip.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/pdfmake/pdfmake.min.js',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/pdfmake/vfs_fonts.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/datatables-plugins/buttons/css/buttons.bootstrap4.min.css',
                 ],
             ],
         ],

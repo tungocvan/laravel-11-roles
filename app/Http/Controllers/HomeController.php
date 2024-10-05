@@ -21,9 +21,23 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+        $roleName = $request->user()->getRoleNames()[0];
+        switch ($roleName) {
+            case 'Admin':
+                return redirect()->route('admin.index');
+            
+            case 'Teacher':
+                return redirect()->route('admin.teacher.index');
+            case 'Student':
+                return redirect()->route('student.index');
+            
+            default:
+                 return view('home');
+        }
+     
+       
     }
     public function dashboard()
     {
