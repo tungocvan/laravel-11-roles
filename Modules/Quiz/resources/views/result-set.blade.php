@@ -35,6 +35,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="card-footer">
+                    <a href="{{ route('student.index') }}">Quay lại</a>
+                </div>
             </div>
         </div>
     </div>
