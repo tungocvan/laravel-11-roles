@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Modules\Quiz\Models\Question;
 use Modules\Quiz\Models\QuestionSet;
+use Modules\Category\Models\WpTerm;
+use Modules\Category\Models\WpTermTaxonomy;
+
 class QuizController extends Controller
 {
     /**
@@ -112,6 +115,50 @@ class QuizController extends Controller
         // Trả về view kết quả
         return view('Quiz::result-set', ['results' => $results]);
     }
+
+    public function settings(Request $request)
+    {
+        // $monhoc = WpTermTaxonomy::where('taxonomy', 'topic_cat')
+        // ->join('wp_terms', 'wp_terms.term_id', '=', 'wp_term_taxonomy.term_id')
+        // ->select('wp_terms.name','wp_terms.slug', 'wp_terms.term_id', 'wp_term_taxonomy.parent', 'wp_term_taxonomy.description')
+        // ->get();
+        $topic = getTaxonomy('topic_cat');
+        $class = getTaxonomy('class_cat');
+        //dd($topic);
+        return view('Quiz::settings',compact('topic','class'));
+    }
+
+    public function submitTopic(Request $request){
+               
+        if($request->edit){
+            $result = json_decode($request->edit, true); 
+            echo "edit";
+            dd($result);
+        }    
+        if($request->delete){
+            $result = json_decode($request->delete, true);  
+            echo "delete";
+            dd($result);
+        }
+    }
+    public function submitClass(Request $request){
+              
+        if($request->edit){
+            $result = json_decode($request->edit, true); 
+            echo "edit";
+            dd($result);
+        }    
+        if($request->delete){
+            $result = json_decode($request->delete, true);  
+            echo "delete";
+            dd($result);
+        }
+    }
+    public function submitAdd(Request $request){     
+        dd($request->all());
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

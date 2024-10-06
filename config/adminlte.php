@@ -375,6 +375,12 @@ return [
             'icon' => 'fas fa-fw fa-user',
             'can' => 'user-list',
         ],
+        [
+            'text' => 'Cấu hình chung',
+            'url' => 'admin/quiz/settings',
+            'icon' => 'fas fa-fw fa-user',
+            'can' => 'user-list',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'Manage Users',

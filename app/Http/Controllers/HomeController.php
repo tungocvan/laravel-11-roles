@@ -29,7 +29,7 @@ class HomeController extends Controller
                 return redirect()->route('admin.index');
             
             case 'Teacher':
-                return redirect()->route('admin.teacher.index');
+                return redirect()->route('teacher.index');
             case 'Student':
                 return redirect()->route('student.index');
             

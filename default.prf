@@ -10,3 +10,4 @@ ignore = Path vendor
 ignore = Path tests
 ignore = Name default.prf
 ignore = Name *.tmp
+ignore = Path storage/framework
